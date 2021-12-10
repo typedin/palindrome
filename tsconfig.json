@@ -5,7 +5,10 @@
     "strict": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "outDir": "lib",
+    "rootDir": "src",
+    "types": ["node"]
   },
-  "include": ["cli.ts"]
+  "exclude": ["jest.config.ts", "src/tests/*"]
 }

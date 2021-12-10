@@ -2,12 +2,20 @@
   "name": "palindrome",
   "version": "1.0.0",
   "description": "A palindrome checker written in typescript.",
-  "main": "index.js",
-  "scripts": {
-    "palindrome": "ts-node ./src/index.ts",
-    "test": "jest"
+  "author": "typedin",
+  "main": "./lib/index.js",
+  "bin": {
+    "palindrome": "./lib/index.js"
   },
-  "author": "",
+  "scripts": {
+    "start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+    "create": "npm run build && npm run test",
+    "build": "tsc -p .",
+    "local": "sudo npm i -g && palindrome",
+    "refresh": "rm -rf ./node_modules ./package-lock.json && npm install",
+    "test": "jest",
+    "palindrome": "./lib/index.js"
+  },
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.16.0",
