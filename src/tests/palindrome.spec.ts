@@ -1,4 +1,4 @@
-import isPalindrome from "../index.ts";
+import isPalindrome from "../palindrome";
 
 const oddPalindromes = [
   "redivider",

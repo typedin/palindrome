@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "palindrome": "ts-node ./src/index.ts",
     "test": "jest"
   },
   "author": "",
@@ -12,11 +13,20 @@
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.4",
     "@babel/preset-typescript": "^7.16.0",
+    "@types/chalk": "^2.2.0",
+    "@types/cli-color": "^2.0.1",
     "@types/jest": "^27.0.3",
+    "@types/node": "^16.11.12",
+    "@types/yargs": "^17.0.7",
     "babel-jest": "^27.4.2",
     "jest": "^27.4.3",
+    "tslint": "^5.12.1"
+  },
+  "dependencies": {
+    "cli-color": "^2.0.1",
     "ts-node": "^10.4.0",
-    "tslint": "^5.12.1",
-    "typescript": "^3.9.10"
+    "tslib": "^2.3.1",
+    "typescript": "^3.9.10",
+    "yargs": "^17.3.0"
   }
 }

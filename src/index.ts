@@ -1,25 +1,21 @@
-export default function (aString: String): boolean {
-  const sanatizedString = sanatizeString(aString);
+#!/usr/bin/env node
 
-  let response = true;
-  const length = sanatizedString.length;
-  for (
-    let forwardIndex = 0, backwardIndex = length - 1;
-    forwardIndex < backwardIndex;
-    forwardIndex++, backwardIndex = length - (forwardIndex + 1)
-  ) {
-    if (sanatizedString[forwardIndex] != sanatizedString[backwardIndex]) {
-      response = false;
-      break;
-    }
-  }
-  return response;
-}
+import checker from "./palindrome";
+import yargs from "yargs/yargs";
+import { buildOutputMessage } from "./helpers";
 
-function sanatizeString(aString: String): String {
-  return aString
-    .normalize("NFC")
-    .replace(/[^0-9a-z]/gi, "")
-    .replace(/\s/g, "")
-    .toLocaleLowerCase();
-}
+const argv = yargs(process.argv.slice(2))
+  .usage("Usage: palindrome word")
+  .example("$0 palindrome abba", "(check wether abba is a palindrome)")
+  .demandCommand(1)
+  .options({
+    _: { type: "string", default: true, demandOption: true },
+  })
+  .parseSync();
+
+console.log(
+  buildOutputMessage({
+    string: argv._[0].toString(),
+    isPalindrome: checker(argv._[0].toString()),
+  })
+);
