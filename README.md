@@ -15,5 +15,5 @@ npm install
 With yarn
 
 ```
-npm yarn
+yarn
 ```
